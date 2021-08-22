@@ -1,5 +1,5 @@
 ---
-# If Ubuntu doesn't have or doesn't firewalld, you'll need to find some other way, via
+# If Ubuntu doesn't have firewalld, you'll need to find some other way, via
 # Ansible or otherwise, to open up the ports listed below: 
 - name: open TCP 5353
   tags: [afp, avahi, firewall, firewalld]
