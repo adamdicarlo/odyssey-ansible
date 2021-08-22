@@ -1,0 +1,7 @@
+---
+- name: Start avahi-daemon service
+  tags: [afp, avahi, service, systemd]
+  service:
+    name: avahi-daemon
+    state: started
+    enabled: yes

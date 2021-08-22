@@ -1,0 +1,20 @@
+; Ansible managed; manual changes will get overwritten!
+; Netatalk 3.x configuration file
+;
+
+[Global]
+; Global server settings
+
+{% if netatalk_log_to_file == true %}
+log file = /var/log/netatalk.log
+{% else %}
+{% endif -%}
+
+log level = default:{{ netatalk_log_level }},afpdaemon:{{ netatalk_log_level }},logger:{{ netatalk_log_level }},uamsdaemon:{{ netatalk_log_level }}
+
+{% if netatalk_time_machine_server == true %}
+[time_machine]
+path = /home/nick/time_machine
+time machine = yes
+{% else %}
+{% endif -%}

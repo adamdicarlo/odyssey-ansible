@@ -1,0 +1,34 @@
+#Individual machines; each one has a 'group' with its short non-FQDN name where it's the only member:
+
+[server1]
+server1.wackadoodle.com
+
+[server2]
+server2.wackadoodle.com
+
+[server3]
+server3.wackadoodle.com
+
+[server4]
+server4.wackadoodle.com
+
+#This is a group with all of the servers in it:
+
+[servers]
+server1.wackadoodle.com
+server2.wackadoodle.com
+server3.wackadoodle.com
+server4.wackadoodle.com
+
+# Same idea with these groups (you can group machines however you like):
+[ubuntu]
+server1.wackadoodle.com
+server2.wackadoodle.com
+server3.wackadoodle.com
+server4.wackadoodle.com
+
+[docker_servers]
+server1.wackadoodle.com
+server2.wackadoodle.com
+server3.wackadoodle.com
+server4.wackadoodle.com

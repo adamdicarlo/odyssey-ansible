@@ -1,0 +1,6 @@
+---
+- name: Install netatalk
+  tags: [yum, dnf, netatalk, afp]
+  yum: #You'll need to change this to the apt equivalent
+    name: netatalk
+    state: installed

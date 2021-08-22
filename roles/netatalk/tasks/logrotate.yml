@@ -1,0 +1,12 @@
+---
+- name: Template /etc/logrotate.d/netatalk
+  tags: [logrotate, logs, afp, netatalk]
+  when: netatalk_log_to_file == true
+  notify:
+    - Restart rsyslog
+  template:
+    src: logrotate.d/netatalk.j2
+    dest: /etc/logrotate.d/netatalk
+    owner: root
+    group: root
+    mode: 0644

@@ -1,0 +1,6 @@
+---
+- name: Install htop
+  tags: [packages, apt, htop]
+  ansible.builtin.package: #This is generic, it will work with either apt (Debian/Ubuntu) or yum/DNF (Red Hat/CentOS)
+    name: htop
+    state: present

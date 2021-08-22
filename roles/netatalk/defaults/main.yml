@@ -1,0 +1,3 @@
+netatalk_time_machine_server: false
+netatalk_log_level: "info"
+netatalk_log_to_file: true

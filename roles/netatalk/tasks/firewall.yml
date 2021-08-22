@@ -1,0 +1,25 @@
+---
+#Each firewalld resource below corresponds to the commented out firewalld command
+#just above it.
+#firewall-cmd --zone=public --permanent --add-port=548/tcp;
+# If Ubuntu doesn't have or doesn't firewalld, you'll need to find some other way, via
+# Ansible or otherwise, to open up the ports listed below: 
+- name: open TCP 548
+  tags: [afp, netatalk, firewall, firewalld]
+  notify:
+    - Restart firewalld
+  firewalld:
+    zone: public
+    port: 548/tcp
+    permanent: yes
+    state: enabled
+#firewall-cmd --zone=public --permanent --add-port=548/udp;
+- name: open UDP 548
+  tags: [afp, netatalk, firewall, firewalld]
+  notify:
+    - Restart firewalld
+  firewalld:
+    zone: public
+    port: 548/udp
+    permanent: yes
+    state: enabled

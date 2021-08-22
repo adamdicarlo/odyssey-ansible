@@ -1,0 +1,10 @@
+---
+- name: Create /home/adam/time_machine #you'll want to change this to whatever your username is, or wherever you want to keep the Time Machine files
+  tags: [directory, afp, netatalk]
+  when: netatalk_time_machine_server == true
+  file:
+    path: /home/adam/time_machine
+    state: directory
+    owner: adam
+    group: adam
+    mode: 0700

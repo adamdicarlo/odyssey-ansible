@@ -1,0 +1,7 @@
+---
+- name: Start service netatalk and enable on boot, if not started/enabled
+  tags: [service, systemd, netatalk]
+  service:
+    name: netatalk
+    state: started
+    enabled: yes
