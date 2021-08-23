@@ -1,0 +1,9 @@
+---
+- name: Import the firewalld tasks
+  import_tasks: firewall.yml
+- name: Import the install tasks
+  import_tasks: install.yml
+- name: Import the config tasks
+  import_tasks: config.yml
+- name: Import the service tasks
+  import_tasks: service.yml

@@ -1,0 +1,11 @@
+---
+- name: Restart avahi
+  tags: [afp, avahi]
+  service:
+    name: avahi-daemon
+    state: restarted
+- name: Restart firewalld
+  tags: [afp, avahi, firewall, firewalld]
+  service:
+    name: firewalld
+    state: restarted

@@ -1,0 +1,21 @@
+---
+- name: Template avahi-daemon.conf
+  tags: [avahi, afp]
+  notify:
+    - Restart avahi
+  template:
+    src: avahi/avahi-daemon.conf.j2
+    dest: /etc/avahi/avahi-daemon.conf
+    owner: root
+    group: root
+    mode: 0644
+- name: Template afpd.service
+  tags: [avahi, afp]
+  notify:
+    - Restart avahi
+  template:
+    src: avahi/afpd.service.j2
+    dest: /etc/avahi/services/afpd.service
+    owner: root
+    group: root
+    mode: 0644

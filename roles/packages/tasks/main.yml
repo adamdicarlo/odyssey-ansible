@@ -1,0 +1,6 @@
+---
+- name: Import the packages tasks
+  import_tasks: packages.yml
+# You can make more YAML files in this same directory and include them with the
+# import_tasks thing like above. All of your tasks could just be in main.yml but it's
+# good to separate things out.

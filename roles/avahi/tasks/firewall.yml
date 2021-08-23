@@ -1,0 +1,57 @@
+---
+# If Ubuntu doesn't have firewalld, you'll need to find some other way, via
+# Ansible or otherwise, to open up the ports listed below: 
+- name: open TCP 5353
+  tags: [afp, avahi, firewall, firewalld]
+  notify: #look in the handlers/main.yml for where this is defined;
+    - Restart firewalld
+  firewalld:
+    zone: public
+    port: 5353/tcp
+    permanent: yes
+    state: enabled
+- name: open UDP 5353
+  tags: [afp, avahi, firewall, firewalld] 
+  notify:
+    - Restart firewalld
+  firewalld:
+    zone: public
+    port: 5353/udp
+    permanent: yes
+    state: enabled
+- name: open TCP 49152
+  tags: [afp, avahi, firewall, firewalld]
+  notify:
+    - Restart firewalld
+  firewalld:
+    zone: public
+    port: 49152/tcp
+    permanent: yes
+    state: enabled
+- name: open UDP 49152
+  tags: [afp, avahi, firewall, firewalld]
+  notify:
+    - Restart firewalld
+  firewalld:
+    zone: public  
+    port: 49152/udp
+    permanent: yes
+    state: enabled
+- name: open TCP 52883
+  tags: [afp, avahi, firewall, firewalld]
+  notify:
+    - Restart firewalld
+  firewalld:
+    zone: public
+    port: 52883/tcp
+    permanent: yes
+    state: enabled
+- name: open UDP 52883
+  tags: [afp, avahi, firewall, firewalld]
+  notify:
+    - Restart firewalld
+  firewalld:
+    zone: public
+    port: 52883/udp
+    permanent: yes
+    state: enabled

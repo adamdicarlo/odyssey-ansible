@@ -1,0 +1,34 @@
+---
+#/etc/netatalk/afp.conf
+- name: Template afp.conf
+  tags: [afp, netatalk, afp_conf]
+  notify:
+    - Restart netatalk
+  template:
+    src: netatalk/afp.conf.j2
+    dest: /etc/netatalk/afp.conf
+    owner: root
+    group: root
+    mode: 0644
+#/etc/netatalk/dbus-session.conf
+- name: Template dbus-session.conf
+  tags: [afp, netatalk]
+  notify:
+    - Restart netatalk
+  template:
+    src: netatalk/dbus-session.conf.j2
+    dest: /etc/netatalk/dbus-session.conf
+    owner: root
+    group: root
+    mode: 0644
+#/etc/netatalk/extmap.conf
+- name: Template extmap.conf
+  tags: [afp, netatalk]
+  notify:
+    - Restart netatalk
+  template:
+    src: netatalk/extmap.conf.j2
+    dest: /etc/netatalk/extmap.conf
+    owner: root
+    group: root
+    mode: 0644

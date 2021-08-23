@@ -1,0 +1,14 @@
+{% if netatalk_log_to_file == true %}
+/var/log/netatalk.log {
+  daily
+  rotate 30
+  compress
+  copytruncate
+  missingok
+  dateext
+  dateformat -%Y-%m-%d
+  create 0644 root root
+  sharedscripts
+}
+{% else %}
+{% endif -%}

@@ -1,0 +1,6 @@
+---
+- name: Install avahi
+  tags: [yum, dnf, avahi, afp]
+  yum: #you'll need to change this to the apt equivalent or to the generic Ansbile package one
+    name: avahi
+    state: installed

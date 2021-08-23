@@ -1,0 +1,16 @@
+---
+- name: Restart firewalld
+  tags: [afp, netatalk, firewall, firewalld]
+  service:
+    name: firewalld
+    state: restarted
+- name: Restart netatalk
+  tags: [afp, netatalk]
+  service:
+    name: netatalk
+    state: restarted
+- name: Restart filebeat
+  tags: [afp, netatalk, filebeat, logs]
+  service:
+    name: filebeat
+    state: restarted

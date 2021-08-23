@@ -1,0 +1,20 @@
+##########################################
+# server1
+##########################################
+
+- hosts: server1 # this can also be one of the other groups like docker_servers
+  remote_user: admin
+  become: true
+  become_method: sudo
+  vars: #You can also have a machine-specific file in host_vars/ ie. host_vars/server1.yml
+    - avahi_hostname: server1
+    - avahi_domain: local
+    #The type of icon that the machine will show up with in the Finder sidebar:
+    - avahi_model_icon: Xserve
+  vars_files:
+    - ./host_vars/server1.yml
+  roles:
+    - packages
+    # Uncomment these to actually apply them
+    #- avahi 
+    #- netatalk
